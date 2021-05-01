@@ -754,3 +754,89 @@ Toán tử gán
 
                     3. Arrow function
 */
+
+/**
+                    Object Trong Javasript
+                    var MyInfo = {
+                        FullName: "Phí Thanh Tùng",
+                        age: 25,
+                        address: 'Hà Nội, Việt Nam',
+
+                        getName: function(){
+                            return this.FullName; // this == MyInfo
+                        }
+
+
+                    };
+
+                    console.log(MyInfo.getName());
+                    // console.log(MyInfo.email);
+                    console.log(MyInfo.FullName);
+                    document.getElementById('root').innerText=MyInfo.FullName;
+
+                    MyInfo.email = "thanhtung19041998@gmail.com";
+                    delete MyInfo.age; //xóa 1 value
+
+                    Function --> Phương thức / Method
+                    Others --> Thuộc tính / Property
+
+*/
+
+/**
+                //Object Constructor
+                    function User(firstName, lastName, avatar){
+                        this.firstName = firstName;
+                        this.lastName = lastName;
+                        this.avatar = avatar;
+
+                        this.getName = function(){
+                            return `${this.firstName} ${this.lastName}` 
+                        }
+                    }
+
+                    var author = new User('Thanh Tùng','Phí','Avatar');
+
+                    var user = new User('Thanh Phong','Phí','Avatar');
+
+                    author.title = " ADMIN ";
+                    user.comment = "Good Job";
+                    console.log(author.constructor === User);
+                    console.log(user);
+                                    
+*/
+
+/**
+                    Object prototype - Basic
+
+                    1. Prototype là gì ?
+                    2. Sử dụng khi nào ?
+                    function User(firstName, lastName, avatar){
+                        this.firstName = firstName;
+                        this.lastName = lastName;
+                        this.avatar = avatar;
+
+                        this.getName = function(){
+                            return `${this.firstName} ${this.lastName}` 
+                        }
+                    }
+
+                    User.prototype.className = "F8" //thêm 1 thuộc tính bên ngoài hàm tạo
+                    User.prototype.getClassName = function(){ // hoạt động hoàn toàn giống nhau
+                        return this.className;
+                    }
+
+                    var author = new User('Thanh Tùng','Phí','Avatar');
+                    var user = new User('Thanh Phong','Phí','Avatar');
+
+                    console.log(author.className);
+                    console.log(user.getClassName());
+
+*/
+
+/**
+                    Đối tượng Date
+                    var date = new Date();
+
+                    console.log(date);
+*/
+
