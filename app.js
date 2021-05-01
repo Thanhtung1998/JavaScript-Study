@@ -840,3 +840,79 @@ Toán tử gán
                     console.log(date);
 */
 
+/**
+                    Câu lệnh rẽ nhánh - If else
+                    var date = 2;
+                        if (date === 2){
+                            console.log('Hôm nay là thứ 2');
+                        }else if(date === 3){
+                            console.log('Hôm nay là thứ 3');
+                        }else if (date === 4){
+                            console.log('Hôm nay là thứ 4');
+                        }else if (date === 5){
+                            console.log('Hôm nay là thứ 5');
+                        }else if (date === 6){
+                            console.log('Hôm nay là thứ 6');
+                        }else{
+                            console.log('Không phù hợp');
+                        }
+                        // kiểm tra 1 nhánh đúng kể cả khi 
+                        // có 2 nhánh đúng thì chỉ xét nhánh đầu tiên 
+*/
+
+/**
+                    Câu lệnh rẽ nhánh - Switch
+                   var inputdate = document.getElementById('input');
+                    var formLogin = document.getElementById('form-login')
+                    if (formLogin.attachEvent) {
+                        formLogin.attachEvent('submit', onFormSubmit);
+
+                    } else {
+                        formLogin.addEventListener('submit', onFormSubmit)
+                    }
+
+                    function onFormSubmit(e){
+                        var date = inputdate.value;
+                    switch(date){
+                        case '2': 
+                            console.log("hôm nay là thứ 2");
+                            break;
+                        case '3': // ===
+                            console.log("hôm nay là thứ 3");
+                            break;
+                        case '4': 
+                            console.log("hôm nay là thứ 4");
+                            break;
+                        case '5': 
+                            console.log("hôm nay là thứ 5");
+                            break;
+                        default:
+                            console.log('Không biết');
+                    }
+                    }
+
+*/
+
+/**
+                    Toán tử 3 ngôi - Ternary operator
+                    var course = {
+                        name: 'Javascript',
+                        coin: 250
+                    }
+                    if (course.coin>0){
+                        console.log(`${course.coin} Coins`);
+                    }else{
+                        console.log("free");
+                    }
+
+                    Giải quyết bài toán trên bằng toán tử 3 ngôi
+
+                    var result = course.coin > 0 ? `${course.coin} Coins` : Miễn phí;
+
+                    console.log(result);
+
+
+*/
+
+
+                    
