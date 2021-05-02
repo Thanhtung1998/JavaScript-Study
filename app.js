@@ -6,6 +6,35 @@ Giới thiệu về toán tử trong Javascript
     4. Toán tử logic - Logical
 */
 
+/**
+ Giới thiệu một số hàm built-in
+
+    1. Alert Thông báo
+    2. Console
+    3. Confirm // Hộp thoại xác nhận
+
+    comfirm("hôm nay là thứ 2");
+
+    4. Prompt  //
+
+    prompt("Xac nhận độ tuổi");
+
+    5. Set timeout
+
+    setTimeout(function() {
+
+    },1000); // cho một đoạn code chạy sau 1 khoảng thời gian
+
+    6. Set interval
+
+    setInterval(function() {
+
+    },1000);
+
+    // chạy định kỳ sau một khoảng thời gian
+
+*/
+
 
 /**
     Toán tử số học
@@ -151,7 +180,7 @@ Toán tử gán
     1. Kiểu dữ liệu nguyên thủy - Primitive Data
         - Number // var a = 1; // khi thực thi giá trị a = 1 sẽ được lưu vào 1 vùng nhớ x khi gán lại giá trị cho a giá trị mới sẽ lưu vào vị trí vùng nhớ y
         - String
-        - Boolean
+        - Boolean : true or false (đối với sô 0 false , 1,2,3... true)
         - Undefined
         - Null
         - Symbol
@@ -914,5 +943,499 @@ Toán tử gán
 
 */
 
+/**
+                Vòng lặp - Loop
+                    1. for - Lặp với điều kiện đúng
+                    2. for/in - Lặp qua key của đối tượng
+                    3. for/of - Lặp qua value của đối tượng
+                    4. while - Lặp khi điều kiện đúng
+                    5. do/while - Lặp ít nhất 1 lần sau đó lặp khi điều kiện đúng
+*/
 
-                    
+/**
+                For Loop
+                    var i = 1
+                    for (i=1; i<=1000; i++){
+                        console.log(i);
+                    }
+*/
+
+/**
+                    var myArray= [
+                        'JavaScript',
+                        'Ruby',
+                        'Dart',
+                        'Solidity',
+                    ]
+                    var arrayLength = myArray.length;
+                    for (var i=0; i<arrayLength ; i++){
+                        console.log(myArray[i]);
+                    }
+*/
+
+/**
+                    Phạm vi sử dụng cho object array , chuỗi
+var myInfo = {
+    name: "Phí Thanh Tùng",
+    age: 25,
+    address: "Hà nội,VN"
+}
+
+for (var key in myInfo){
+    console.log(myInfo[key]);
+}
+*/
+
+/**
+        For/of loop phạm vi sử dụng cho Array , chuỗi
+        // Sử dụng khi muốn lấy ra phần tử của một mảng hoặc từng chữ cái của một chuỗi
+
+        var languages= [
+                        'JavaScript',
+                        'Ruby',
+                        'Dart',
+                        'Solidity',
+                    ]
+        for (var value in languages){
+        console.log(value);
+        }
+
+        // Trường hợp object
+        var myInfo = {
+        name: "Phí Thanh Tùng",
+        age: 25,
+        address: "Hà nội,VN"
+        }
+
+        
+
+        for (var value of Object.keys(myInfo)){
+            console.log(myInfo[value]);
+        }
+*/
+
+/**
+        do/while loop
+
+        var i = 0;
+        do{
+            i++;
+            console.log(i);
+
+        }while(i < 10);
+
+        // trường hợp nap thẻ
+        var i = 0;
+        var isSuccess = false;
+
+        do{
+            i++;
+
+            console.log('Nạp thẻ lần' + i);
+
+            if(true){ //false = lặp lại 3 lần
+                isSuccess = true;
+            }
+        }while(!isSuccess && i<=3);
+
+
+*/
+
+/**
+        Break & Continue in Loop
+        Break khi muốn thoát khỏi vòng lặp
+        Continue khi muốn bỏ qua một vài vòng của vòng lặp
+        
+        for (var i=0; i<10; i++){
+            console.log(i);
+              if (i>=5){
+                    break
+                }
+        }
+
+        for (var i=0; i<10;i++){
+
+            if(i%2 !== 0){ // loại bỏ các số lẻ
+                continue;
+            }
+            console.log(i);
+
+        }
+
+*/
+
+/**
+        Vòng lặp lồng nhau - Nested Loop
+
+        var myArray = [ [1,2],[3,4],[5,6]];
+
+        for(var i=0; i< myArray.length;i++){
+            for(var j=0 ; j< myArray[i].length;j++){
+                console.log(myArray[i][j]);
+            }
+
+        } // vòng con thực hiện song thì đến vòng cha thực hiện
+
+
+
+*/
+
+/**
+        Dom events (Document Object Model)
+*/
+
+/**
+                    Math Object
+                        - Math.PI // trả lại số PI
+                        - Math.round()  // làm tròn số
+                        - Math.abs()    // giá trị tuyệt đối
+                        - Math.ceil()   // làm tròn trên 4.000000000001 = 5
+                        - Math.floor()  // làm tròn dưới 4.999999999999 = 4   
+                        - Math.random() // trả về số ngẫu nhiên < 1
+                        - Math.min(-100,100,..)    // lấy số nhỏ nhất trong chuỗi
+                        - Math.max(100,102,...)    // lấy số lớn nhất trong chuỗi
+*/
+
+/**
+        Callback?
+
+        Là hàm (function) được truyền qua đối số
+        khi gọi hàm khác
+
+        1. Là hàm
+        2. Được truyền qua đối số 
+        3. Được gọi lại (trong hàm nhận đối số)
+
+        function MyFunction(param){
+            if (typeof param === "function"){
+            param("Hello Word");
+            }
+        }
+
+        function MyCallBack(value){
+            console.log('Value',value);
+        }
+
+
+        MyFunction(MyCallBack);
+
+*/
+/**
+        Ví dụ empty elements of array
+
+        var languages= [
+        'JavaScript',
+        'Ruby',
+        'Dart',
+        'Solidity',
+        ];
+
+        languages.length = 10;
+
+        for (var index in languages)
+        {
+            console.log(languages[index]);
+        }
+
+*/
+/**
+        Ví dụ call back
+
+        Array.prototype.map2 = function(callback)
+    {
+        var output = [], arrayLength = this.length;
+
+        for (var i=0; i< arrayLength; i++){
+            var result = callback(this[i],i);
+            output.push(result);
+        }
+
+        return output;
+        }
+    var languages= [
+            'JavaScript',
+            'Ruby',
+            'Dart',
+            'Solidity',
+    ];
+
+    var htmls = languages.map2(function(language){
+        return `<h2>${language}</h2>`;
+
+    })
+
+    console.log(htmls.join(''));
+
+    // var htmls = languages.map(function(language){
+    //     return `<h2>${language}</h2>`;
+    // })
+    // console.log(htmls.join(''));
+
+    //Filter
+    var ages = [32,33,16,40];
+
+    Array.prototype.filter2 = function(callback) {
+    var arrayLength = this.length
+    var output = [];
+    for(var i = 0; i < arrayLength; i++) {
+        if(callback(this[i]) === true){
+            output.push(this[i])
+        }
+    }  
+    return output;
+    }
+
+    var ageuchia = ages.filter2(function(age){
+        return age > 16;
+    })
+    console.log(ageuchia);
+*/
+
+/**
+    My forEach Call Back 
+
+    1. Object prototype
+    2. For in // không duyệt qua các phân tử trong mảng rỗng 
+    3. hasOwnProperty //các phần tử có trong mảng boolean = true ; các prototype tự định nghĩa= false
+
+    var languages= [
+    'JavaScript',
+    'Ruby',
+    'Dart',
+    'Solidity',
+    ];
+
+    Array.prototype.forEach2 = function(callback){
+        for (var index in this){ //duyệt qua cả element trong prototype forEach 2 là 1 prototype tự định nghĩa 
+            if(this.hasOwnProperty(index)){ // kiểm trả thứ tự gần nhất của object chỉ duyệt các elemment 
+            callback(this[index],index,this); //các phần tử là index trả về true còn lại false
+            }
+        }
+    }
+    
+    languages.forEach2(function(language,index,array){
+            console.log(language,index,array);
+    });
+
+    // languages.forEach(function(language,index,array){
+    //     console.log(language,index,array);
+    // });
+
+*/
+
+/**
+   Call Back filter method filter 2
+        Array.prototype.filter2 = function(callback){
+            
+            var output = [];
+            
+            for (var index in this){
+                if(this.hasOwnProperty(index)){
+                var result =   callback(this[index],index,this);
+                if(result){
+                    output.push(this[index]);
+                }
+                }
+            }
+            return output;
+        }
+
+        var courses = [
+            {
+                name: 'Javascript',
+                coin: 580,
+            },
+            {
+                name: 'Dart',
+                coin: 680,
+            },
+            {
+                name: 'Ruby',
+                coin: 980,
+            },
+            {
+                name: 'PHP',
+                coin: 880,
+            },
+            {
+                name: 'HTML,CSS',
+                coin: 780,
+            },
+        ]
+
+
+        var filterCourses = courses.filter2(function(course,index,array){
+            // console.log(course,index,array);
+            return course.coin > 700;
+            
+
+        });
+
+        console.log(filterCourses);
+*/
+
+/**
+        Method some2() array
+
+        Array.prototype.some2 = function(callback){
+            var output = false
+            for(var index in this){
+                if(this.hasOwnProperty(index)){
+                    if(callback(this[index],index,this)){
+                        output = true;
+                        break;
+                    }
+                }
+            }
+            return output;
+        }
+
+        var courses = [
+            {
+                name: 'Javascript',
+                coin: 580,
+                isFinish: false,
+            },
+            {
+                name: 'Dart',
+                coin: 680,
+                isFinish: true,
+            },
+            {
+                name: 'Ruby',
+                coin: 980,
+                isFinish: false,
+            },
+            {
+                name: 'PHP',
+                coin: 880,
+                isFinish: false,
+            },
+            {
+                name: 'HTML,CSS',
+                coin: 780,
+                isFinish: false,
+            },
+        ]
+
+        var result = courses.some2(function(course,index,array){
+            console.log(course,index,array);
+            return course.isFinish;
+        
+        });
+
+        console.log(result);
+*/
+
+/**
+        method every2 call back (array)
+
+            Array.prototype.every2 = function(callback){
+                var output = true
+                for(var index in this){
+                    if(this.hasOwnProperty(index)){
+                        var result = callback(this[index],index,this)
+                            if(!result){
+                                output = false;
+                                break;
+                            }
+                        }
+                }
+                return output;
+            }
+
+            var courses = [
+                {
+                    name: 'Javascript',
+                    coin: 580,
+                    isFinish: true,
+                },
+                {
+                    name: 'Dart',
+                    coin: 680,
+                    isFinish: false,
+                },
+                {
+                    name: 'Ruby',
+                    coin: 980,
+                    isFinish: true,
+                },
+                {
+                    name: 'PHP',
+                    coin: 880,
+                    isFinish: true,
+                },
+                {
+                    name: 'HTML,CSS',
+                    coin: 780,
+                    isFinish: true,
+                },
+            ]
+
+            var result = courses.every2(function(course,index,array){
+                return course.coin > 500;
+
+            });
+
+            console.log(result);
+*/
+
+/**
+            Bài toán loại bỏ các phẩn tử lặp trong mảng
+            var array = ['a','b','c','d','a','b','c','d'];
+
+            console.log([...(new Set(array))]);
+            Đệ qui trong JavaScript :
+                Là hàm tự gọi lại chính nó
+                    1.Xác định điểm dừng
+                    2.Logic Handle => tạo ra điểm dừng
+                        function countDown(num){
+                            if(num >0){
+                                console.log(num);
+                                return countDown(num-1);
+                            }
+                            return num;
+                        }
+
+                        countDown(10);
+            // đệ qui
+            function loop(start,end,callback){
+                    if(start <= end){
+                        callback(start);
+                        return loop(start+1,end,callback);
+                    }
+                }
+
+                var array = ['Javascript','PHP','Ruby','PHP','Ruby','PHP','Ruby'];
+
+                loop (0, array.length - 1 , function(index){
+                    console.log(array[index]);
+                });
+            // vòng lặp giai thừa
+            function giaithua(num){
+                var output = 1
+                for (var i = num; i>0;i--){
+                    output = output * i;
+                }
+                
+                return output;
+            }
+
+            console.log(giaithua(6));
+
+            // đệ qui giai thừa
+            function giaithua(num){
+                if(num > 0){
+                    return num * giaithua(num - 1);
+                }
+                return 1;
+            }
+
+            console.log(giaithua(6));
+*/
+
+
+
+
+
+
