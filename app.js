@@ -1435,7 +1435,714 @@ for (var key in myInfo){
 */
 
 
+/**
+        // Html Dom (Document Object Model)
+        // Khi mà trang web được tải trình duyệt sẽ tạo ra DOM của trang web
+        // W3schools.com đọc thêm tài liệu
+        // DOM tuân theo quy chuẩn W3C (World Wide Web Consortium)
+        // 3 Thành phần : 1. Element 2.Attribute 3.Text
+        // Node
+        // Dùng JavaScript để thay đổi thuộc tính của DOM
+        
+        // Core DOM - standard model for all document types : word , excel ...
+        // XML DOM - standard model for XML documents
+        // HTML DOM - standard model for HTML documents
+*/
+
+/**
+            Javascript: Browser | Server (NodeJS)
+
+            // Application programming interface (API)
+
+            Browser: HTML -> DOM -> WEB API
+
+            DOM ko phải 1 phần của JavaScript
+*/
+
+/**
+            DOM Event 
+            1. Attribute Event
+            2. Assign event using the element node
+            Đọc thêm các DOM event tại Web3School key word DOM event
+
+            var h1Element = document.querySelectorAll('h1');
+
+            for(var i=0 ; i<h1Element.length;i++){
+                h1Element[i].onclick =function(e){
+                    console.log(this.innerText);
+                }
+            }
+*/
+
+/**
+            DOM Event
+            1. Input /select
+            2. Key up / down
+            // var InputElement = document.querySelector('input[type="text1"]');
+            // var InputElement = document.querySelector('input[type="checkbox"]');
+            // var InputElement = document.querySelector('select')
+            // console.log(InputElement);
+
+            // InputElement.oninput = function(e){
+            //     document.getElementById('root').innerText =  e.target.value;
+            // }
+
+            // key up key down
+
+            // InputElement.onkeyup = function(e){
+            //     console.log(e.target.value);
+            //     console.log(e.which);
+
+            //     switch(e.which){
+            //         case 27:
+            //             console.log("EXIT");
+            //             break ;
+            //         case 65: 
+            //             console.log("A");
+            //             break ;
+                
+
+            //     }
+            // }
+
+            document.onkeyup = function(e){
+                console.log(e.which);
+
+                switch(e.which){
+                    case 27:
+                        console.log("EXIT");
+                        break ;
+                    case 65: 
+                        console.log("A");
+                        break ;
+                    case 13:
+                        document.getElementById('root').innerText =  e.target.value;
+                        break;    
+                }
+            }
+            // InputElement.onchange = function(e){
+            //     console.log(e.target.checked);
+            // }
+
+            // InputElement.onchange = function(e){
+            //     console.log(e.target.value);
+            // }
+*/
 
 
+/**
+            DOM Event
+
+            1. preventDefault 
+                - loại bỏ hành vi mặc định của trình duyệt trên một thẻ HTML
+                var aElements = document.querySelectorAll('a');
+
+            for(var i = 0 ; i < aElements.length ;++i) {
+                aElements[i].onclick = function(e){
+
+                    if(!e.target.href.startsWith('https://coccoc.com/search')){
+                        e.preventDefault(); //khong cho cac trang khác với trang cocococ được chuyển trang
+                     }
+                }
+            }
+
+            var ulElement = document.querySelector('ul');
+
+                ulElement.onmousedown = function(e){
+                    e.preventDefault();
+                }
+                        ulElement.onclick = function(e){
+                            
+                            console.log(e.target);
+                }
+
+            2. StopPropagation
+                - Loại bỏ sự kiện nổi bọt
+                document.querySelector('div1').onclick = function(e){
+                    console.log('DIV');
+                }
+
+                document.querySelector('.button').onclick = function(e){
+                    e.stopPropagation();
+                    console.log('Click me!');
+                }
+*/
+
+
+
+/**
+            Text DOM
+            
+            var headingElement = document.querySelectorAll('.heading');
+            for(var i=0 ; i<headingElement.length;i++)
+            {
+            console.log(headingElement[i].innerText);
+            headingElement[i].innerText = "NEW String";
+            console.log(headingElement[i].textContent);
+            headingElement[i].textContent = "Thanh Tùng";
+            }
+            //innerText ghi lại đúng thuộc tính nhìn thấy ở trang web
+            //textContent ghi lại các thuộc tính trong code    
+*/
+
+/**
+            Get Element methods
+            1. Element: ID , class, tag, Css selector, html collection
+            document.getElementById('')
+            document.getElementsByClassName('')
+            document.getElementsByTagName('h1')
+            var headingNode = document.querySelector('.heading'); // kiến thức css
+            // dùng cho form trong html
+            <form id="form-1"></form>
+            document.forms['form-1'];
+            // thẻ a
+            document.anchors
+            // images
+            document.images
+            // List (thẻ li)
+            var listItemNodes = document.querySelectorAll('.box-1 li');
+            var boxNode =  document.querySelector('.box-1');
+            // công việc 1 : Sử dụng tới `boxNode`
+            // công việc 2 : Sử dụng tới các li elements
+            // là cong của `box-1`
+            console.log(boxNode.querySelectorAll('li'));
+            console.log(listItemNodes);
+
+            // document.write('Hello');
+            2. Attribute
+
+            //DOM attributes
+
+            var headingElement = document.querySelector('h1');
+
+            //seter
+                //title
+                headingElement.title = "Heading";
+                // id
+                headingElement.id = "Heading";
+                // class
+                headingElement.className = "Heading"
+                // href
+                var headingElement = document.querySelector('a'); 
+                headingElement.href = "Heading";
+            /setAttribute
+                
+                var headingElement = document.querySelector('h1');
+
+                headingElement.setAttribute('data-1','heading');
+            //getAttribute
+               console.log(headingElement.getAttribute('class'));
+
+
+
+            3. Text
+
+*/
+/**
+            Node properties
+
+            contenteditable=""
+
+            là các propretype của elements //đọc thêm
+ 
+*/
+
+/**
+            InnerHTML propretype
+            OuterHTML
+            var boxElement = document.querySelector('.box');
+
+            boxElement.innerHTML = "<h1>Thanh Tùng</h1>";
+
+            console.log(document.querySelector('h1').innerText);
+
+            console.log(boxElement.outerHTML);
+*/
+
+/**
+            DOM CSS(Style)
+
+            var boxElement = document.querySelector('.box');
+
+            console.log(boxElement.style);
+
+            //background-position
+            //camelCase
+
+            boxElement.style.width = '100px';
+            boxElement.style.height = '200px';
+            boxElement.style.backgroundColor = 'red';
+            // hoac viet theo kieu
+            Object.assign(boxElement.style,{
+                width: '200px',
+                height: '100px',
+                backgroundColor: 'green',
+            });
+
+*/
+
+/**
+            ClassList Property
+
+            //add them
+            //contains //kiem tra
+            //remove    //xoa
+            //toggle    //
+            var boxElement = document.querySelector('.box');
+
+            console.log(boxElement.classList);
+
+            boxElement.classList.add('red','blue');
+
+            console.log(boxElement.classList.contains('red')); //result == true neu co
+
+            setInterval(()=>{
+                // boxElement.classList.remove('red');
+                boxElement.classList.toggle('red'); //kiem tra xem co thi bo khong co thi them
+            },3000);
+
+*/
+
+/**
+            1. DOM Event / Event Listener
+            // DOM event phức tạp trong sử lý nhiều việc
+            // Sử dụng trong trường hợp đơn giản và không cần xóa đi sự kiện 
+            var btn = document.getElementById('btn');    
+                setTimeout(function(){
+                    btn.onclick = function(e){
+                        console.log('viec 1');
+                    
+                        console.log('viec 2');
+                    
+                        console.log('viec 3');
+                    }
+
+                    console.log(btn);
+                },3000); //huy bỏ lắng nghe 3s đầu
+
+                setTimeout(function(){
+                    btn.onclick = function(){} //huy bỏ lắng nghe 
+                },3000)
+
+            //Event listener
+
+                btn.addEventListener('click',function(e){
+                    console.log(Math.random());
+                });//2 đối số chính 1 tên sự kiện , 2 function
+
+                btn.addEventListener('click',function(e){
+                    console.log(Math.random());
+                });//2 đối số chính 1 tên sự kiện , 2 function
+
+                btn.addEventListener('click',function(e){
+                    console.log(Math.random());
+                });//2 đối số chính 1 tên sự kiện , 2 function
+
+                // 3 sự kiện này là khác nhau được gọi lần lượt sự kiện nào đặt trc gọi trc .
+
+                //hủy bỏ lắng nghe
+
+                function viec1(){
+                    console.log("viec1");
+                }
+
+                function viec2(){
+                    console.log("viec2");
+                }
+
+                btn.addEventListener('click',viec1);
+                btn.addEventListener('click',viec2);
+
+                setTimeout(function(){ // hủy bỏ
+                    btn.removeEventListener('click',viec1);
+                },3000); //sau 3s mất đi ông việc 1
+                
+            2. JSON (JavaScript Object Notation)
+                - Là một định dạng dữ liệu (chuỗi)
+                - JSON: Number , String , Boolean , Null , Array , Object (kiểu dữ liệu)
+                - Thao tác mã hóa / giải mã (Encode / decode)
+                - Stringify / chuyển dữ liệu sang 1 kiểu JSON - 
+                Parse -chả lại kiểu dữ liệu ban đầu Json -> JavaScript
+                // var JSON = '1'; //Number
+                // var JSON = 'true'; //boolean
+                // var JSON = '["JavaScript","PHP"]'; //Array
+                // var JSON = '"Thanh Tùng"'; // String
+                // var json = '{"name":"Thanh Tùng","age":24}';
+
+                // console.log(JSON.parse(json));
+
+                // console.log(JSON.stringify(true)); //Javascript -> JSON
+
+                // console.log(JSON.stringify(["JavaScript","PHP"])); //Javascript -> JSON
+
+                // console.log(JSON.stringify({name:"Thanh Tùng",age:24})); //Javascript -> JSON
+            3. Fecth
+                
+            4. DOM location
+            5. Local storage
+            6. Session storage
+            7. Coding convention
+            8. Best Practices
+            9. Mistakes
+            10. Performance
+            11. Promise 
+                - JavaScript là ngôn ngữ đồng bộ nhưng bên trong vẫn có xử lý bất đồng bộ
+                - Sync - Đồng bộ
+                - Async - Bất Đồng bộ
+                - Nỗi đau 
+                    + Callback hell giải quyết bằng promise (vấn đề của dữ liệu rằng buộc)
+                        setTimeout(function(){
+                            console.log(1);
+                            setTimeout(function(){
+                                console.log(2);
+                            },1000)
+                        },1000);
+                    + Pyramid of doom
+                - Lý thuyết , Cách hoạt động
+                    // ES6
+                    // Có 3 trạng thái
+                    // 1. Pendding chờ đợi
+                    // 2. Fulfilled thành công
+                    // 3. Rejected thất bại
+                    // Sử dụng promise để khắc phục tình trạng callback hell
+                    // Sử dụng trong trường hợp bất đồng bộ
+                    var promise = new Promise(
+                        //Executor
+                        // nếu ko điền 2 function thì sảy ra Memory leak ()
+                        function(resolve,reject){
+                            // Logic
+                            // Thành công : resolve()
+                            // Thất bại: reject
+                            // Fake call API
+                            resolve({
+                                id: 1,
+                                name: "JavaScript",
+                            });
+                            // reject('có lỗi');
+                        }
+                    ); //Object constructor
+
+                    promise // then catch nhận callback function 
+                        .then(function(language){ //sau đó của promise resolve
+                            console.log(language);  
+                        })
+                        .catch(function(error){ //khi reject (bẫy) thông báo lỗi cho người dùng
+                            console.log(error);
+                        })
+                        .finally(function(){ //khi thực hiện xong
+                            console.log("Done!");
+                        });
+                        //Chain
+                        var promise = new Promise(
+                            //Executor
+                            // nếu ko điền 2 function thì sảy ra Memory leak ()
+                            function(resolve,reject){
+                                // Logic
+                                // Thành công : resolve()
+                                // Thất bại: reject
+                                // Fake call API
+                                resolve(
+                                );
+                                // reject('có lỗi');
+                            }
+                        ); //Object constructor 
+
+                        promise // then catch nhận callback function 
+                            .then(function(){ //sau đó của promise resolve
+                                // return 1;
+                                // trường hợp với 1 Promise
+                                return new Promise(function(resolve){
+                                    
+                                    setTimeout(function(){resolve({id: 1,
+                                        name: "JavaScript",});
+                                    },3000);
+                                })
+                            })//then đằng sau phải chờ Promise đằng trước
+                            .then(function(data){ //tham số đằng trước có thể kết quả của đằng sau
+                                console.log(data); 
+                                return 2;
+                            })
+                            .then(function(data){ //sau đó của promise resolve
+                                console.log(data);  
+                            })
+                            .catch(function(error){ //khi reject (bẫy) thông báo lỗi cho người dùng
+                                console.log(error);
+                            })
+                            .finally(function(){ //khi thực hiện xong
+                                console.log("Done!");
+                            });
+                            // tính chất chuỗi Promise giải quyết vấn đế callback hell
+                            function sleep(ms){
+                                return new Promise(function(resolve){
+                                    setTimeout(resolve, ms);
+                                })
+                            }
+
+                            sleep(1000)
+                                .then(function(){
+                                console.log(1);
+                                return sleep(1000);
+                                // không có return 1 Promise thì ko phải chờ đợi đằng trước thực hiện xong
+                                })
+                                .then(function(){
+                                    console.log(2);
+                                    return sleep(1000); 
+                                })
+                                .then(function(){
+                                    console.log(3);
+                                    return sleep(1000);
+                                });
+                - Thực hành, ví dụ 
+                    -//Sync / Async
+                    Đồng bộ là ai viết trước chạy trước 
+                    console.log(1);
+                    console.log(2);
+                    // Async
+                    // Các thao tác bất đồng bộ
+                    // -setTimeout , setInterval , fetch , XMLHttpRequest , đọc file
+                    // request animation frame
+                    // Callback
+                    // sleep ngủ 1s
+                    setTimeout(function(){ // callback function
+                        console.log(1);
+                    },1000)
+                    console.log(2);
+            1. Xử lý nhiều việc khi 1 event xảy ra 
+            2. Lắng nghe / hủy bỏ lắng nghe
+*/  
+
+/**
+function sleep(ms){
+    return new Promise(function(resolve){
+        setTimeout(resolve, ms);
+    })
+}
+
+sleep(1000)
+    .then(function(){
+    console.log(1);
+    return sleep(1000);
+    })
+    .then(function(){
+        console.log(2);
+        return new Promise (function(resolve,reject){
+            reject();
+        })
+    })
+    .then(function(){
+        console.log(3);
+        return sleep(1000);
+    })
+    .catch(function(error){
+        alert("Hệ thống đang có vấn đề")
+    });
+*/
+/**
+    1. Promise.resolve
+    2. Promise.reject 
+    3. Promise.all //chạy song song các Promise
+
+        // var promise = new Promise(function (reslove,reject){
+        //     reslove("Success!");
+        // });
+
+        // var promise = Promise.resolve("Successfully");
+        // var promise = Promise.reject("Error!");
+        // promise .then(function(hello){
+        //     alert(hello);
+        // })
+        // .catch(function(error){
+        //     alert(error);
+        // })
+        // .finally(function(){
+
+        // });
+
+        var promise = new Promise(function(reslove){
+            setTimeout(function(){
+                reslove([1]);
+            },1000)
+        });
+
+        var promise1 = new Promise(function(reslove){
+            setTimeout(function(){
+                reslove([2,3]);
+            },2000)
+        });
+
+        var promise2 = new Promise(function(resolve,reject){
+            reject("Có lỗi")
+        });
+        // nếu promise all mà có 1 thành phần bị lỗi kết quả trả 
+        // về sẽ nhận lỗi bỏ qua các thành phần đúng
+        Promise.all([promise,promise1,promise2])
+        .then(function(result){
+            var result1 = result[0];
+            var result2 = result[1];
+            console.log(result1.concat(result2));
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+
+*/
+/////////////////////////////////////////////////////////////////////////////////////////
+/**
+        ES6- ECMAScript 6 - ECMAScript 2015
+        1. Let, const
+        2. Template Literals
+        3. Multi-line String
+        4. Arrow function
+        5. Classes
+        6. Default parameter values // Định nghĩa giá trị mặc định cho các tham số
+            function logger(log, isAlert = false , type='log') {
+                if (isAlert) return alert(log);
+                console[type](log); 
+            }
+
+            logger('Hello World',true);
+        7. Destructuring
+        8. Rest parameters
+        9. Spread
+        10. Enhenced object literals 
+            // 1. Định nghĩa key: value cho object
+            // 2. Định nghĩa method cho object
+            // 3. Dịnh nghĩa key cho object dưới dạng biến
+                var name = "JavaScript"
+                var price = 1000;
+
+                var courses = {
+                    name: name, // bình thường
+                    price, // Enhenced object literals
+
+                    getName: function(){
+                        return name; //bình thường
+                    },
+                    getPrice() {
+                        return price; // method
+                    }
+                };
+
+                // 3. Định nghĩa key cho object dưới dạng biến
+                var fieldName = "name";
+                var fieldPrice = "price";
+
+
+                const course = {
+                    [fieldName]: "javascript",
+                    [fieldPrice]: 1000
+                }
+
+                console.log(course);
+
+                console.log(courses.getName());
+                console.log(courses.getPrice());
+
+        11. Tagged template literal
+        12. Modules
+*/
+
+
+/**
+        Let, const
+        1. Var / Let, Const : Scope , Hosting
+        // var truy cập được trong và ngoài block
+// let const chỉ truy cập được bên trong block
+        if(true){
+            var course = "JavaScript basic!"; // được
+            let course = "JavaScript basic!";  // ko được
+            const course = "JavaScript basic!"; // ko được
+        }
+
+        console.log(course);
+
+        // Hosting đưa lên trên phạm vị
+        // Trình Biên dịch thành
+            var a;
+            a=1;
+            // khai báo
+            var a = 1;
+
+            // const let ko hỗ trợ hosting
+        2. Const / Var, Let : Assignment
+
+        const a = 1;
+
+        a = 100;
+
+        console.log(a);
+
+        //ko hỗ trợ asignment (thay đổi giá trị) gán lại giá trị của a
+        // thay đổi thuộc tính trong const thì vẫn được
+
+
+        //Code block: if else , loop , {} , ....
+
+        // Code Thuần: Var
+        // Babel: Const , Let
+        // Khi định nghĩa biến và không gán lại biến đố thì dùng : Const
+        // kHi muốn gán lại giá trị cho biến thì dùng Let , Var
+*/
+
+/**
+        Arrow function // ko dùng được khi là function contructor
+
+        const sum = (a,b) => a+b; // return object ({a: a,b: b});
+    console.log(sum(2,3));
+
+        // const MyFunction = (log) => {
+        //     console.log(log);
+        // } // Arrow function
+
+        // const MyFunction = function(log){
+        //     console.log(log); //2. Expression function
+        // }
+
+
+        // function MyFunction(log){ // 1. Declaration function
+        //     console.log(log)
+        // }
+
+        // MyFunction("Messagge........")
+
+        // khong dung arrow function
+        const course = {
+            name: "JavaScript",
+            getName: function(){
+                return this; // context
+            }
+        }
+
+        console.log(course.getName());
+*/
+
+/** 
+        const courseName = 'javascript';
+
+        // const description = "Course Name :" + courseName ; //nối chuỗi bình thường
+
+        const description = `Course Name : ${courseName}` // template string chú ý dấu \
+
+        console.log(description);
+
+*/
+
+/**
+        Classes //Cách viết khác của constructor function
+
+    class Course {
+    constructor(name,price){
+        this.name = name;
+        this.price = price;
+    }
+    getName() { return this.name; }
+    getPrice() { return this.price; }
+    }
+
+    const PHPCourses = new Course("PHP",1000);
+
+    console.log(PHPCourses);
+
+*/
 
 
