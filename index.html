@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Test</title>
         <link rel="stylesheet">
         <style>
@@ -10,14 +11,54 @@
                 text-align: center;
                 position: relative;
             }
+            .red{
+            color: red;
+            }
+            ul{
+                display: none;
+            }
+            input:focus ~ ul {
+                display: block;
+            }
 
         </style>
     </head>
     <body>
-        <button onclick="MyFunction()">My Function</button>
+        <div class="box box-2"><h1>Class List</h1></div>
+        <button onclick="MyFunction()">&nbsp My Function</button>
         <input id="input" type="text"/>
         <button class="submit" type="submit" onclick="return onFormSubmit()">Confirm</button>
-        <div id="root">NA</div>
+        <div id="root"></div>
+        <br>
+        <div1>DIV
+            <button id="btn">Click me!</button> 
+            <!-- Sự kiện nổi bọt -->
+            <!-- Sự kiện click bên trong nổi ra bên ngoài thẻ ngoài cùng -->
+        </div1>
+        <br>
+        <div>
+            <input type='text1'>
+            <input type="checkbox">
+            <select>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </div>
+        <br />
+        <div>
+        <input placeholder="Tìm kiếm" />
+        <ul>
+            <li>Javascript</li>
+            <li>Ruby</li>
+            <li>Python</li>
+        </ul>
+        </div>
+        <br /> 
+        <a href="https://coccoc.com/search">cốc cốc</a>
+        <br>
+        <a href="https://www.facebook.com/">facebook</a>
         <script src="app.js"></script>
     </body>
 
